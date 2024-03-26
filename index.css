@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-  color: hwb(59 4% 0%); /* Gold color for headings */
+  color: #ffd700; /* Gold color for headings */
   font-family: "Pacifico", cursive; /* Fun font for headings */
   font-size: 36px; /* Larger font size */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for headings */
