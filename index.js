@@ -23,37 +23,50 @@ const songs = [
     artist: "Elvin Bishop",
     genre: "Rock",
   },
-  // Feel free to add even more songs
+  { title: "Bohemian Rhapsody", artist: "Queen", genre: "Classic Rock" }, // Added new song
+  {
+    title: "Sweet Child o' Mine",
+    artist: "Guns N' Roses",
+    genre: "Classic Rock",
+  }, // Added new song
+  { title: "Thriller", artist: "Michael Jackson", genre: "Pop" }, // Added new song
+  { title: "Livin' on a Prayer", artist: "Bon Jovi", genre: "80s Pop" }, // Added new song
+  { title: "Master of Puppets", artist: "Metallica", genre: "Heavy Metal" }, // Added new song
 ];
 
 // Object containing each Guardian's preferred genre
 const guardians = {
   "Star-Lord": "Rock",
   Gamora: "Pop",
-  Drax: "Classic Rock", // Added preferences for Drax
-  Rocket: "80s Pop", // Added preferences for Rocket
-  Groot: "Heavy Metal", // Added preferences for Groot
+  Drax: "Classic Rock",
+  Rocket: "80s Pop",
+  Groot: "Heavy Metal",
 };
 
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
+  const playlistsDiv = document.getElementById("playlists");
+
   for (const guardianName in guardians) {
     const preferredGenre = guardians[guardianName];
     const filteredSongs = songs.filter((song) => song.genre === preferredGenre);
 
-    // Check if any songs match the preferred genre
+    const playlistElement = document.createElement("div");
+    playlistElement.innerHTML = `<h2>${guardianName}'s ${preferredGenre} Playlist:</h2>`;
+
     if (filteredSongs.length > 0) {
-      const playlist = filteredSongs.map(
-        (song) => `${song.title} by ${song.artist}`
-      );
-      console.log(
-        `${guardianName}'s ${preferredGenre} Playlist: ${playlist.join(", ")}`
-      );
+      const playlistList = document.createElement("ul");
+      filteredSongs.forEach((song) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${song.title} by ${song.artist}`;
+        playlistList.appendChild(listItem);
+      });
+      playlistElement.appendChild(playlistList);
     } else {
-      console.log(
-        `${guardianName} doesn't have any songs in their preferred genre.`
-      );
+      playlistElement.textContent = `${guardianName} doesn't have any songs in their preferred genre.`;
     }
+
+    playlistsDiv.appendChild(playlistElement);
   }
 }
 
