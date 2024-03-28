@@ -27,5 +27,5 @@
 
 # challenges
 
-- The i faced when i was coding the guardian playlist background was not showing because i didn't add class.
+- The challenges i faced when i was coding the guardian playlist background was not showing because i didn't add class.
 - And the titles didn't show the yellow color because i didn't add a span class.
