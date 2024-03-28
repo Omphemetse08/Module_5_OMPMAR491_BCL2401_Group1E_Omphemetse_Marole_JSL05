@@ -24,3 +24,8 @@
 
 - You can easily add more songs to the list by following the same format (title, artist, genre).
 - you can also add more guardian and their genres.
+
+# challenges
+
+- The i faced when i was coding the guardian playlist background was not showing because i didn't add class.
+- And the titles didn't show the yellow color because i didn't add a span class.
