@@ -23,15 +23,30 @@ const songs = [
     artist: "Elvin Bishop",
     genre: "Rock",
   },
-  { title: "Bohemian Rhapsody", artist: "Queen", genre: "Classic Rock" }, // Added new song
+  // Add at least five more songs
+  { title: "Bohemian Rhapsody", artist: "Queen", genre: "Classic Rock" },
+  { title: "Thriller", artist: "Michael Jackson", genre: "Pop" },
   {
-    title: "Sweet Child o' Mine",
-    artist: "Guns N' Roses",
+    title: "Stairway to Heaven",
+    artist: "Led Zeppelin",
     genre: "Classic Rock",
-  }, // Added new song
-  { title: "Thriller", artist: "Michael Jackson", genre: "Pop" }, // Added new song
-  { title: "Livin' on a Prayer", artist: "Bon Jovi", genre: "80s Pop" }, // Added new song
-  { title: "Master of Puppets", artist: "Metallica", genre: "Heavy Metal" }, // Added new song
+  },
+  {
+    title: "Girls Just Want to Have Fun",
+    artist: "Cyndi Lauper",
+    genre: "80s Pop",
+  },
+  { title: "Sweet Child o' Mine", artist: "Guns N' Roses", genre: "80s Pop" },
+  { title: "Smells Like Teen Spirit", artist: "Nirvana", genre: "Grunge" },
+  { title: "Hotel California", artist: "Eagles", genre: "Classic Rock" },
+  { title: "Breaking the Law", artist: "Judas Priest", genre: "Heavy Metal" },
+  { title: "Ace of Spades", artist: "Motörhead", genre: "Heavy Metal" },
+  { title: "Take On Me", artist: "a-ha", genre: "80s Pop" },
+  { title: "Wake Me Up Before You Go-Go", artist: "Wham!", genre: "80s Pop" },
+  { title: "Master of Puppets", artist: "Metallica", genre: "Heavy Metal" },
+  { title: "Breaking the Law", artist: "Judas Priest", genre: "Heavy Metal" },
+  { title: "Comfortably Numb", artist: "Pink Floyd", genre: "Classic Rock" },
+  { title: "Dream On", artist: "Aerosmith", genre: "Classic Rock" },
 ];
 
 // Object containing each Guardian's preferred genre
@@ -52,13 +67,14 @@ function generatePlaylist(guardians, songs) {
     const filteredSongs = songs.filter((song) => song.genre === preferredGenre);
 
     const playlistElement = document.createElement("div");
+    playlistElement.classList.add("playlist");
     playlistElement.innerHTML = `<h2>${guardianName}'s ${preferredGenre} Playlist:</h2>`;
 
     if (filteredSongs.length > 0) {
       const playlistList = document.createElement("ul");
       filteredSongs.forEach((song) => {
         const listItem = document.createElement("li");
-        listItem.textContent = `${song.title} by ${song.artist}`;
+        listItem.innerHTML = `<span class='song-title'> ${song.title}</span> by ${song.artist}`;
         playlistList.appendChild(listItem);
       });
       playlistElement.appendChild(playlistList);
