@@ -17,7 +17,7 @@
 
 # What you can see.
 
-- When you open the code i a web browser, you will see playlists for each guardian with their songs listed
+- When you open the code in a web browser, you will see playlists for each guardian with their songs listed
 - If the guardian doesn't have any song in their favorite genre, it will show the message letting you know you dont have any song on the playlist.
 
 # What you can add.
